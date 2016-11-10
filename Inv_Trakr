@@ -1,0 +1,95 @@
+import java.util.*;
+import java.util.Scanner;
+
+
+
+
+public class Inv_Trakr {
+	
+	public static String banana;
+	public static String pear;
+	public static String apple;
+	public static String orange;
+	public static String watermelon;
+	
+	public static void main(String args[]) 
+	{
+		Scanner keyboard = new Scanner(System.in);
+		
+		System.out.println("Welcome to the fruit inventory tracker!");
+		
+		//BEGIN INV LIST
+		LinkedList<String> ll = new LinkedList<String>();
+		
+		//PEARS IN INV 
+		System.out.println("Please enter the amount of pears you have:");
+			pear = keyboard.next();
+			ll.add(pear);
+			System.out.println("You have " + pear + " pears.");
+		//APPLES IN INV
+		System.out.println("Please enter the amount of apples you have:");
+			apple = keyboard.next();
+			ll.add(apple);
+			System.out.println("You have " + apple + " apples.");
+		//BANANAS IN INV 
+		System.out.println("Please enter the amount of bananas you have:");
+			banana = keyboard.next();
+			ll.add(banana);
+			System.out.println("You have " + banana + " bananas.");
+		//ORANGES IN INV
+		System.out.println("Please enter the amount of oranges you have:");
+			orange = keyboard.next();
+			ll.add(orange);
+			System.out.println("You have " + orange + " oranges.");
+		//WATERMELONS IN INV
+		System.out.println("Please enter the amount of watermelons you have:");
+			watermelon = keyboard.next();
+			ll.add(watermelon);
+			System.out.println("You have " + watermelon + " watermelons.");
+			
+		//CURRENT INV LIST
+		System.out.println("Your current inventory is: " + ll);
+		
+		//BEGIN SOLD LIST10
+		LinkedList<String> sold = new LinkedList<String>();
+		
+		//PEARS SOLD
+		System.out.println("Please enter the amount of pears sold:");
+			pear = keyboard.next();
+			sold.add(pear);
+		System.out.println("You sold " + pear + " pears.");
+		//APPLES SOLD
+		System.out.println("Please enter the amount of apples sold:");
+			apple = keyboard.next();
+			sold.add(apple);
+			System.out.println("You sold " + apple + " apples.");
+		//BANANAS SOLD
+		System.out.println("Please enter the amount of bananas sold:");
+			banana = keyboard.next();
+			sold.add(banana);
+			System.out.println("You sold " + banana + " bananas.");
+		//ORANGES SOLD
+		System.out.println("Please enter the amount of oranges sold:");
+			orange = keyboard.next();
+			sold.add(orange);
+			System.out.println("You sold " + orange + " oranges.");
+		//WATERMELONS SOLD
+		System.out.println("Please enter the amount of watermelons sold:");
+			watermelon = keyboard.next();
+			sold.add(watermelon);
+			System.out.println("You sold " + watermelon + " watermelons.");
+
+		System.out.println("Key: [P, A, B, O, W]");
+		System.out.println("You had: " + ll);
+		System.out.println("You sold: " + sold);
+		LinkedList<String> next = new LinkedList<String>();
+		
+		for(int count=0 ; count<5 ; count++) {
+			int have = Integer.parseInt(ll.get(count));
+			int sale =Integer.parseInt(sold.get(count));
+			int result = have - sale;
+			next.add(Integer.toString(result));
+		}
+		System.out.println("You now have: " + next);
+}
+}
